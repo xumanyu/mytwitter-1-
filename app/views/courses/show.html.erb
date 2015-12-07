@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body 
+{
+background-image:url('paper.gif');
+background-color:#cccccc;
+}
+</style>
+</head>
+
+<body>
+<h1><p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @course.name %>
+</p>
+<%=image_tag("t01c387ea20619345aa.jpg")%>
+<p>
+  <strong>Address:&nbsp&nbsp</strong>
+  <%= link_to 'click here', @course.link %>
+</p>
+
+</h1>
+</body>
+
+</html>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

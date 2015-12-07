@@ -1,5 +1,19 @@
-<p id="notice"><%= notice %></p>
 
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body 
+{
+background-image:url('paper.gif');
+background-color:#FFD7OO;
+}
+</style>
+</head>
+
+<body>
+<h1>
 <p>
   <strong>Strat time:</strong>
   <%= @plan.strat_time %>
@@ -24,6 +38,10 @@
   <strong>State:</strong>
   <%= @plan.state %>
 </p>
+</h1>
+</body>
+
+</html>
 
 <%= link_to 'Edit', edit_plan_path(@plan) %> |
 <%= link_to 'Back', plans_path %>

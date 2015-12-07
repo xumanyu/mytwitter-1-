@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { background-image: url("t01844cfb48cf3088b5.jpg"); }
+
+
+</style>
+</head>
+<body>
+<h1><font color=blue size=24>New Feedback</font></h1>
+<div class="row">
+  <div class="span6 offset3">
+<%= form_for(@feedback) do |f| %>
+    <%= render 'form'%>
+    
+
+    
+    
+    <%= f.label  :comment %>
+    
+    <%= f.label :star %>
+    <%= f.radio_button :star, '1', :checked => true %> rate one
+    <%= f.radio_button :star, '2' %> rate two
+    <%= f.radio_button :star, '3' %> rate three
+    <%= f.radio_button :star, '4' %> rate four
+    <%= f.radio_button :star, '5' %> rate five
+    <br><br>
+    <%= f.submit "Post ", class: "btn btn-large btn-primary"  %> 
+<% end %>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+<%= link_to 'Back', feedbacks_path %>

@@ -1,15 +1,27 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { background-image: url("t01844cfb48cf3088b5.jpg"); }
+h1
+{
+text-shadow: 5px 5px 5px #FF0000;
+}
+</style>
+</head>
+<body>
+
 
 <h1>Listing Plans</h1>
-
-<table>
+<p id="notice"><%= notice %></p>
+<table align='center'>
   <thead>
     <tr>
-      <th>Strat time</th>
-      <th>End time</th>
-      <th>Distance</th>
-      <th>Progress</th>
-      <th>State</th>
+      <th>Strat time&nbsp&nbsp</th>
+      <th>End time&nbsp&nbsp</th>
+      <th>Distance&nbsp&nbsp</th>
+      <th>Progress&nbsp&nbsp</th>
+      <th>State&nbsp&nbsp</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,8 +34,8 @@
         <td><%= plan.distance %></td>
         <td><%= plan.progress %></td>
         <td><%= plan.state %></td>
-        <td><%= link_to 'Show', plan %></td>
-        <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
+        <td><%= link_to 'Show', plan %>&nbsp&nbsp</td>
+        <td><%= link_to 'Edit', edit_plan_path(plan) %>&nbsp&nbsp</td>
         <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -31,5 +43,12 @@
 </table>
 
 <br>
-
+</body>
+</html>
+<table align="center">
+  <tr><td>
 <%= link_to 'New Plan', new_plan_path %>
+</tr></td>
+</table>
+
+

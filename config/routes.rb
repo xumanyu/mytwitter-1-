@@ -2,6 +2,8 @@
 
   
 
+  resources :feedbacks
+  resources :courses
   resources :plans
   resources :requests
           resources :users  
@@ -13,8 +15,6 @@
 
           get 'help'    => 'static_pages#help'
           get 'request'    => 'static_pages#request'
-          get 'relationship'    => 'static_pages#user followers'
-          
           get 'about'   => 'static_pages#about'
           get 'contact' => 'static_pages#contact'
           get 'signup'  => 'users#new'

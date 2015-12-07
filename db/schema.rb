@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207141434) do
+ActiveRecord::Schema.define(version: 20151207175205) do
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.string   "type"
+    t.string   "comment"
+    t.integer  "star"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"

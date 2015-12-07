@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { background-image: url("t01844cfb48cf3088b5.jpg"); }
+
+h1
+
+{
+text-shadow: 5px 5px 5px #FF0000;
+}
+</style>
+</head>
+<body>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Courses</h1>
+
+
+
+<table align='center'>
+
+  <thead>
+    <tr>
+      <th>Name&nbsp&nbsp</th>
+      <th>Address&nbsp&nbsp</th>
+      
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.address %></td>
+        
+        <td><%= link_to 'Show', course %>&nbsp&nbsp</td>
+        <td><%= link_to 'Edit', edit_course_path(course) %>&nbsp&nbsp</td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</body>
+</html>
+<table align="center">
+  <tr><td>
+<%= link_to 'New Course', new_course_path %>
+</tr></td>
+</table>
+
+

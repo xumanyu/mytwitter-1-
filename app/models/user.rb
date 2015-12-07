@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
-
+  has_many :feedbacks   
+   
  	     attr_accessor :remember_token
        before_save { self.email = email.downcase }
        validates :name, presence: true, length: { in: 9..30 }
@@ -43,13 +44,5 @@ class User < ActiveRecord::Base
        def feed
                 Micropost.where("user_id = ?", id)
         end
-        def following?(other_user)
-           relationships.find_by_followed_id(other_user.id) 
-        end
-        def follow!(other_ser) 
-          relationships.create!(followed_id: other_user.id)
-        end
-        def unfollow!(other_user) 
-          relationships.find_by_followed_id(other_user.id).destroy
-        end
+       
     end    

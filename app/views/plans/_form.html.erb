@@ -1,0 +1,37 @@
+<%= form_for(@plan) do |f| %>
+  <% if @plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+
+      <ul>
+      <% @plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :strat_time %><br>
+    <%= f.text_field :strat_time %>
+  </div>
+  <div class="field">
+    <%= f.label :end_time %><br>
+    <%= f.text_field :end_time %>
+  </div>
+  <div class="field">
+    <%= f.label :distance %><br>
+    <%= f.number_field :distance %>
+  </div>
+  <div class="field">
+    <%= f.label :progress %><br>
+    <%= f.text_field :progress %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

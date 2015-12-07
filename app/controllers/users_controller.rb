@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :signed_in_user,
+                 only: [:index, :edit, :update, :destroy, :following, :followers]
   def show
   	@user = User.find(params[:id])
     @microposts = @user.microposts
@@ -17,5 +19,6 @@ class UsersController < ApplicationController
         else
             render 'new'# Handle an unsuccessful save.     
         end
- end
+  end
+ 
 end

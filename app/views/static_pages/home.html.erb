@@ -1,4 +1,26 @@
-<% if logged_in? %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#myDIV {
+    -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    50% {text-shadow: 10px 20px 30px blue;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    50% {text-shadow: 10px 20px 30px blue;}
+}
+</style>
+</head>
+<body>
+	<% if logged_in? %>
       <div class="row">
         <aside class="col-md-4">
           <section class="user_info">
@@ -8,29 +30,33 @@
             <%= render 'shared/micropost_form' %>
           </section>
         </aside>
-        <div class="col-md-8">
-          <h3>Micropost Feed</h3>
-          <%= render 'shared/feed' %>
-        </div>
       </div>
     <% else %>
-      <div class="center jumbotron">
-
-        <h1>Meet your ideal body!</h1>
-        <h2>
-       "FITNESS" IS NOT QUITING.
-       <br>
-    <br>IT'S GETTING UP ONE MORE TIME.
-  </h2>
- 
 
         
+      <div class="center jumbotron">
 
-        <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+
+
+<div id="myDIV">
+  <h1>Meet your ideal body</h1>
+  <p>"FITNESS" IS NOT QUITING.
+  <br>IT'S GETTING UP ONE MORE TIME.
+  </p>
+</div>
+
+</body>
+</html>
+      <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
       </div>
 
       <%=image_tag("005QFjC4gw1er08gn30paj30go09dgmp.jpg")%>
       <%=image_tag("516D7E9C34D7F5119709C9F8B02BA3C8.png")%>
-     
+  <% end %>
 
-    <% end %>
+		
+        
+
+        
+
+        

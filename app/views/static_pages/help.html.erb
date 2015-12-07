@@ -1,9 +1,69 @@
-        <% provide(:title, 'Help') %>
-        <h1>Help</h1>
-        <p>
-          Get help on the Ruby on Rails Tutorial at the
-          <a href="http://railstutorial.org/help">Rails Tutorial help page</a>.
-          To get help on this sample app, see the
-          <a href="http://railstutorial.org/book">Rails Tutorial book</a>.
-        </p>
+      
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body 
+{
+background-image:url('paper.gif');
+background-color:#000000;
+}
+#div1 {
+    position: relative;
+    margin: auto;
+    height: 150px;
+    width: 250px;
+    padding: 10px;
+    border: 1px solid black;
+    /* Chrome, Safari, Opera */
+    -webkit-perspective: 200px;
+    -webkit-animation: mymove 5s infinite;
+    /* Standard syntax */
+    animation: mymove 5s infinite;
+    perspective: 200px;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    50% {-webkit-perspective: 100px;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    50% {perspective: 100px;}
+}
+
+#div2 {
+    padding: 50px;
+    position: absolute;
+    border: 1px solid black;
+    background-color: red;
+    -webkit-transform: rotateX(45deg); /* Chrome, Safari, Opera */
+    transform: rotateX(45deg);
+}
+</style>
+</head>
+<body>
+
+<% provide(:title, 'Help') %>
+        <h1 style="color:white;">Help</h1>
+
+<div id="div1">DIV1
+  <div id="div2">Get help on the Ruby on Rails Tutorial at the Rails Tutorial help page.</div>
+  <p style="color:white; font-size:20px">To get help on this sample app, see the Rails Tutorial book.</p>
+</div>
+
+</body>
+</html>
+			
+</head>
+<body>
+
+<div id="myDIV"></div>
+</body>
+</html>			
+        
+        
   

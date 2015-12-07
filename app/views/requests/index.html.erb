@@ -1,10 +1,24 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body 
+{
+background-image:url('paper.gif');
+background-color:#A52A2A ;
+}
+</style>
+</head>
+
+<body>
+<h1><p id="notice"><%= notice %></p>
 
 <h1>Listing Requests</h1>
 <table align=center border=1>
   <tr>
     <td align=center bgcolor="#fff000">
 <table>
+ 
   <thead>
     <tr>
       <th>From&nbsp&nbsp&nbsp&nbsp</th>
@@ -31,5 +45,17 @@
 </tr>
 </table>
 <br>
+<%= link_to 'New request', new_request_path %>
 
-<%= link_to 'New Request', new_request_path %>
+
+
+</h1>
+</body>
+
+</html>
+      
+
+
+
+
+      

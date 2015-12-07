@@ -1,5 +1,6 @@
- class User < ActiveRecord::Base
- 	has_many :microposts, dependent: :destroy
+class User < ActiveRecord::Base
+  has_many :microposts, dependent: :destroy
+
  	     attr_accessor :remember_token
        before_save { self.email = email.downcase }
        validates :name, presence: true, length: { in: 9..30 }
@@ -10,12 +11,15 @@
        validates :password, presence: true, length: { minimum: 6 }
        validates :password_confirmation, presence: true
        has_secure_password
+       
+       
 # Returns the hash digest of a string.
       def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                       BCrypt::Engine.cost
         BCrypt::Password.create(string, cost: cost)
       end
+      
 
       # Returns a random token.
       def User.new_token
@@ -31,11 +35,21 @@
       def authenticated?(remember_token)
         BCrypt::Password.new(remember_digest).is_password?(remember_token)
       end
+      
        # Forgets a user.
        def forget
           update_attribute(:remember_digest, nil)
        end
        def feed
                 Micropost.where("user_id = ?", id)
-            end
+        end
+        def following?(other_user)
+           relationships.find_by_followed_id(other_user.id) 
+        end
+        def follow!(other_ser) 
+          relationships.create!(followed_id: other_user.id)
+        end
+        def unfollow!(other_user) 
+          relationships.find_by_followed_id(other_user.id).destroy
+        end
     end    

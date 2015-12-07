@@ -1,13 +1,20 @@
  Rails.application.routes.draw do
 
+  
+
+  resources :plans
   resources :requests
           resources :users  
           resources :microposts, only: [:create, :destroy]
+          resources :sessions, only: [:new, :create, :destroy] 
+          resources :microposts, only: [:create, :destroy] 
+          
           root 'static_pages#home'
 
           get 'help'    => 'static_pages#help'
           get 'request'    => 'static_pages#request'
-          get 'courses'    => 'static_pages#courses'
+          get 'relationship'    => 'static_pages#user followers'
+          
           get 'about'   => 'static_pages#about'
           get 'contact' => 'static_pages#contact'
           get 'signup'  => 'users#new'

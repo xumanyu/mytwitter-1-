@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Strat time:</strong>
+  <%= @plan.strat_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @plan.end_time %>
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @plan.distance %>
+</p>
+
+<p>
+  <strong>Progress:</strong>
+  <%= @plan.progress %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @plan.state %>
+</p>
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>
